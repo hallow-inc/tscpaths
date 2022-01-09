@@ -161,8 +161,8 @@ const replaceAlias = (text: string, outFile: string): string =>
 // import relative to absolute path
 const files = sync(`${outPath}/**/*.{js,jsx,ts,tsx}`, {
   dot: true,
-  noDir: true,
-} as any).map((x) => resolve(x));
+  onlyFiles: true,
+}).map(x => resolve(x));
 
 let changedFileCount = 0;
 
